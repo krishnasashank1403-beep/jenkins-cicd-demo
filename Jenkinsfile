@@ -7,7 +7,7 @@ pipeline {
     }
 
     environment {
-        PYTHON = 'D:\\jenkins-cicd-demo\\jenkins-env\\Scripts\\python.exe'
+        PYTHON = 'C:\\Users\\krish\\AppData\\Local\\Programs\\Python\\Python312\\python.exe'
         IMAGE_NAME = 'jenkins-cicd-demo'
         CONTAINER_NAME = 'cicd-container-jenkins'
     }
@@ -30,7 +30,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 bat 'if not exist test-results mkdir test-results'
-                bat '"%PYTHON%" -m pytest -v --junitxml=test-results\\pytest-results.xml'
+                bat '"%PYTHON%" -m pytest -v --junitxml=test-results/results.xml'
             }
         }
 
